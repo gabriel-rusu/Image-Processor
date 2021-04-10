@@ -1,4 +1,4 @@
-package image.processing;
+package image.processing.engine.models;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import image.processing.engine.constants.*;
-import image.processing.engine.models.*;
 
 /**
  * Unit test for simple App.
