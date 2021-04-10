@@ -84,7 +84,7 @@
           <artifactId>javafx-maven-plugin</artifactId>
           <version>0.0.5</version>
           <configuration>
-            <mainClass>image.processing.App</mainClass>
+            <mainClass>image.processing.engine.controllers.MainController</mainClass>
           </configuration>
         </plugin>
       </plugins>
