@@ -10,9 +10,8 @@
 
 </div>
 
----
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Java application that can perform different processing operation on a BMP image that the user selects
     <br> 
 </p>
 
