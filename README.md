@@ -30,57 +30,38 @@ Write about 1-2 paragraphs describing the purpose of your project.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-What things you need to install the software and how to install them.
+The following are the necessary tools needed to run/extend the current project:
+- [Maven](https://maven.apache.org/download.cgi) - build tool for Java
+- [Java JDK 11+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
 
-```
-Give examples
-```
 
 ### Installing
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+To get the development environment ready to extend the current project, just type the following command in a terminal window opened in the root directory of this project:
 
 ```
-Give the example
+mvn clean install
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
 
 ## 🔧 Running the tests <a name = "tests"></a>
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-Explain what these tests test and why
-
-```
-Give an example
+To run the tests type the following command in a terminal opened in the root directory: 
+```java
+mvn clean test
 ```
 
 ## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system.
+To run the app type: 
+```java
+mvn clean javafx:run
+```
 
-## 🚀 Deployment <a name = "deployment"></a>
-Add additional notes about how to deploy this on a live system.
+## 👀 Preview <a name = "preview"></a>
+ <img width=900px height=630px src="src\main\resources\images\preview.png" alt="Project preview">
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Visual Studio Code](https://code.visualstudio.com/) - code editor
+- [Maven](https://maven.apache.org/) - build system for Java apps
+- [JDK 15](https://www.oracle.com/java/technologies/javase-downloads.html) - virtual machine for Java apps
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@gabriel-rusu](https://github.com/gabriel-rusu) - Idea & Initial work
