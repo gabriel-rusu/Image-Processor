@@ -11,7 +11,7 @@
 </div>
 
 
-<p align="center"> Java application that can perform different processing operation on a BMP image that the user selects
+<p align="center"> JavaFX application that lets the user choose a BMP image and then choose the operations that he wants to be applied to the image
     <br> 
 </p>
 
