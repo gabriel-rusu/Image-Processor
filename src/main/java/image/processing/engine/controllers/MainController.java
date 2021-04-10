@@ -40,7 +40,7 @@ public class MainController extends Application {
      * 
      * @param screen - the screen name that will be displayed
      */
-    public static void display(AppScreen screen) {
+    public static boolean display(AppScreen screen) {
         try {
             Parent root = FXMLLoader.load(instance.getClass().getResource(screen.getPath()));
             Scene scene = new Scene(root);
@@ -48,21 +48,25 @@ public class MainController extends Application {
             stage.setResizable(false);
             stage.setTitle(APP_NAME);
             stage.show();
+            return true;
         } catch (Exception exception) {
             logger.log(SEVERE, "The app couldn't start correctly", exception);
+            return false;
         }
     }
 
 
-    public static void display(Parent layout) {
+    public static boolean display(Parent layout) {
         try{
             Scene scene = new Scene(layout);
             stage.setScene(scene);
             stage.setResizable(false);
             stage.setTitle(APP_NAME);
             stage.show();
+            return true;
         }catch (Exception exception) {
             logger.log(SEVERE, "The app couldn't start correctly", exception);
+            return false;
         }
     }
 

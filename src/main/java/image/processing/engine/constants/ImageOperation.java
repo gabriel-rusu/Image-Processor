@@ -1,4 +1,4 @@
-package image.processing.engine.models;
+package image.processing.engine.constants;
 
 public enum ImageOperation {
     ROTATE(0),

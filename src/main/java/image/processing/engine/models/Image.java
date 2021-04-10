@@ -1,13 +1,15 @@
 package image.processing.engine.models;
 
-/**
- * Image
- */
 
 import java.io.*;
 import java.awt.*;
+import java.util.logging.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import static java.util.logging.Level.*;
+import image.processing.engine.constants.ImageOperation;
+
+
 
 public class Image {
     /**
@@ -18,6 +20,7 @@ public class Image {
      * The error message that will appear if something went wrong at opening the file
      */
     private static final String ERROR_MESSAGE = "Error at opening the file: ";
+    private static final Logger logger = Logger.getLogger(Image.class.getName());
     private BufferedImage image = null;
     private static final String FILE_FORMAT = "bmp";
     private int width;
@@ -47,8 +50,8 @@ public class Image {
     }
 
     private static void displayInfo(Exception e, String path) {
-        System.out.println(ERROR_MESSAGE + path);
-        System.out.println(ERROR_STACK_TRACE_MESSAGE + e.getStackTrace());
+        logger.log(SEVERE ,ERROR_MESSAGE + path, e);
+        logger.log(SEVERE ,ERROR_STACK_TRACE_MESSAGE + e.getMessage(), e);
     }
 
     public BufferedImage getBufferedImage() {
@@ -92,6 +95,7 @@ public class Image {
             if (imageFile.exists())
                 imageFile.createNewFile();
             ImageIO.write(this.image, FILE_FORMAT, imageFile);
+            logger.info("Created the image "+ imageFile.getName() +" with absolute path: " + imageFile.getAbsolutePath());
         } catch (Exception e) { // Cath possible Exception that can arise from saving or opening a file
             Image.displayInfo(e, path);
             return false;
