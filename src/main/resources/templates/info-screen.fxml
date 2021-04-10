@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="101.0" fitWidth="175.0" layoutX="214.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/info.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="20.0" layoutY="13.0" mnemonicParsing="false" text="&lt; Back" />
+      <ToggleButton layoutX="844.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="41.0" text="Dark" />
+      <Label layoutX="349.0" layoutY="242.0" text="App Name:" />
+      <Label layoutX="345.0" layoutY="268.0" text="App Version:" />
+      <Text layoutX="429.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="image-processor" />
+      <Text layoutX="429.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1.0.12" />
+      <Hyperlink layoutX="405.0" layoutY="562.0" text="gabrielrusu.dev" />
+      <Label layoutX="346.0" layoutY="291.0" text="Last Update:" />
+      <Text layoutX="429.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10/04/2021" />
+   </children>
+</AnchorPane>
