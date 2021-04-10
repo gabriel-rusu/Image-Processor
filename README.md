@@ -32,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 The following are the necessary tools needed to run/extend the current project:
 - [Maven](https://maven.apache.org/download.cgi) - build tool for Java
-- [Java JDK 11+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
+- [Java JDK 8+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
 
 
 ### Installing
@@ -61,7 +61,7 @@ mvn clean javafx:run
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Visual Studio Code](https://code.visualstudio.com/) - code editor
 - [Maven](https://maven.apache.org/) - build system for Java apps
-- [JDK 15](https://www.oracle.com/java/technologies/javase-downloads.html) - virtual machine for Java apps
+- [JDK 8](https://www.oracle.com/java/technologies/javase-downloads.html) - virtual machine for Java apps
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@gabriel-rusu](https://github.com/gabriel-rusu) - Idea & Initial work
