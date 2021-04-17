@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.File;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -43,6 +45,7 @@ public class ImageTest
         assertNotNull(resultImage);
         assertNotNull(resultImage.getBufferedImage());
         try {
+            File testFile = new File("/test.bmp");
             assertTrue(resultImage.saveTo("/LAND.bmp"));
         } catch(Exception exception) {
             assertTrue(true);
