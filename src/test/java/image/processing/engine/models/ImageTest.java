@@ -44,11 +44,5 @@ public class ImageTest
         Image resultImage = this.image.apply(ImageOperation.ROTATE, "90");
         assertNotNull(resultImage);
         assertNotNull(resultImage.getBufferedImage());
-        try {
-            File testFile = new File("/test.bmp");
-            assertTrue(resultImage.saveTo("/LAND.bmp"));
-        } catch(Exception exception) {
-            assertTrue(true);
-        }
     }
 }
