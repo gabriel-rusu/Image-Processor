@@ -35,7 +35,7 @@ public class InfoScreen {
             MainController.display(AppScreen.HOME);
         });
 
-        ToggleButton toggleButton = (ToggleButton) createButton("Dark", 844.0, 13.0, TOGGLE);
+        ToggleButton toggleButton = (ToggleButton) createButton("Switch Theme", 796.0, 13.0, TOGGLE);
         toggleButton.setOnMouseClicked(event -> {
             System.out.println("clicked on the toggle button" + anchorPane.getStyle());
             MainController.switchTheme();
@@ -47,7 +47,7 @@ public class InfoScreen {
         Text appNameText = buildText("image-processor", 429.0, 255.0, StrokeType.OUTSIDE, 0.0);
         Text appVersionText = buildText("1.0.12", 429.0, 281.0, StrokeType.OUTSIDE, 0.0);
         Text appUpdateText = buildText("10/04/2021", 429.0, 305.0, StrokeType.OUTSIDE, 0.0);
-        Hyperlink addressHyperlink = buildHyperLink("gabrielrusu.dev", 405.0, 562.0);
+        Hyperlink addressHyperlink = buildHyperLink("gabrielrusu.dev", 405.0, 574.0);
 
         anchorPane.getChildren().addAll(logo, backButton, toggleButton, appNameLabel, appNameText, appVersionLabel,
                 appVersionText, lastUpdateLabel, appUpdateText, addressHyperlink);
