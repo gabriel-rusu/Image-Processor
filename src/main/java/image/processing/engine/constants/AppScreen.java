@@ -1,8 +1,10 @@
 package image.processing.engine.constants;
 
 public enum AppScreen {
-    HOME("HOME"),
-    INFO("/templates/info-screen.fxml");
+    HOME("/templates/home-screen.fxml"),
+    INFO("/templates/info-screen.fxml"),
+    GALLERY("/templates/gallery-screen.fxml"),
+    IMAGE_ROTATOR("/templates/image-rotator.fxml");
 
     private String path;
     AppScreen(String path) {

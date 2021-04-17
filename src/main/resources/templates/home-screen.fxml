@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="image.processing.engine.controllers.HomeController">
+   <children>
+      <ToolBar prefHeight="40.0" prefWidth="900.0">
+        <items>
+            <Button mnemonicParsing="false" onAction="#goToInfo" prefHeight="26.0" prefWidth="45.0" text="Info" />
+            <ToggleButton mnemonicParsing="false" onAction="#switchTheme" text="Switch Theme" />
+        </items>
+      </ToolBar>
+      <ImageView fitHeight="309.0" fitWidth="299.0" layoutX="12.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/picture.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="374.0" layoutY="319.0" prefHeight="107.0" prefWidth="150.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goToImageRotation" prefHeight="39.0" prefWidth="150.0" text="Image Rotator">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/updated.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator prefWidth="200.0" />
+            
+            <Button mnemonicParsing="false" onAction="#goToGallery" prefHeight="39.0" prefWidth="150.0" text="Image Gallery">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/image.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+
+         </children>
+      </VBox>
+      <Hyperlink layoutX="405.0" layoutY="574.0" text="gabrielrusu.dev" />
+      <Label layoutX="333.0" layoutY="239.0" text="Image Processor">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="309.0" fitWidth="299.0" layoutX="587.0" layoutY="287.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/picture.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

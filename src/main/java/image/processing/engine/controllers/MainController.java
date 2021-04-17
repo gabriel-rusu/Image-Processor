@@ -15,12 +15,12 @@ public class MainController extends Application {
     private static Stage stage;
     private static Scene scene;
     private static Logger logger;
-    private static Style currentStyle = Style.LIGHT;
+    private static Style currentStyle = Style.DARK;
 
     @Override
     public void start(Stage stage) {
         initialize(this, stage);
-        display(AppScreen.INFO);
+        display(AppScreen.HOME);
     }
 
     /**
