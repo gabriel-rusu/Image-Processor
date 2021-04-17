@@ -1,7 +1,7 @@
 package image.processing.engine.models;
 
-
 import java.io.*;
+import java.nio.BufferOverflowException;
 import java.awt.*;
 import java.util.logging.*;
 import javax.imageio.ImageIO;
@@ -9,15 +9,14 @@ import java.awt.image.BufferedImage;
 import static java.util.logging.Level.*;
 import image.processing.engine.constants.ImageOperation;
 
-
-
 public class Image {
     /**
      * The error message that will be displayed before the exception stack trace
      */
     private static final String ERROR_STACK_TRACE_MESSAGE = "The error stack trace is: ";
     /**
-     * The error message that will appear if something went wrong at opening the file
+     * The error message that will appear if something went wrong at opening the
+     * file
      */
     private static final String ERROR_MESSAGE = "Error at opening the file: ";
     private static final Logger logger = Logger.getLogger(Image.class.getName());
@@ -44,14 +43,14 @@ public class Image {
             width = this.image.getWidth();
             height = this.image.getHeight();
         } catch (Exception exception) {
-            displayInfo( exception, path);
+            displayInfo(exception, path);
             throw new RuntimeException(exception);
         }
     }
 
     private static void displayInfo(Exception e, String path) {
-        logger.log(SEVERE ,ERROR_MESSAGE + path, e);
-        logger.log(SEVERE ,ERROR_STACK_TRACE_MESSAGE + e.getMessage(), e);
+        logger.log(SEVERE, ERROR_MESSAGE + path, e);
+        logger.log(SEVERE, ERROR_STACK_TRACE_MESSAGE + e.getMessage(), e);
     }
 
     public BufferedImage getBufferedImage() {
@@ -77,7 +76,7 @@ public class Image {
             image.width = image.image.getWidth();
             image.height = image.image.getHeight();
         } catch (Exception exception) {
-            Image.displayInfo(exception,path);
+            Image.displayInfo(exception, path);
             throw new RuntimeException(exception);
         }
         return image;
@@ -105,31 +104,38 @@ public class Image {
 
     /**
      * Function that performs the rotation operation on originalImage with degrees
-     * the result will be written in resulImage
+     * the result will be written in resultImage
      *
-     * @param degrees       - one of the following values{90, 180, 270}
+     * @param degrees - one of the following values{90, 180, 270}
      */
     private BufferedImage rotateImageBy(int degrees) {
-        BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        BufferedImage tempImage =  this.image;
+        BufferedImage result;
+        BufferedImage tempImage = this.image;
 
         int numberOfRotations = (degrees / 90);
         for (int count = 0; count < numberOfRotations; count++) {
-            for (int i = 0; i < width / 2; i++)
-                for (int j = i; j < height - i - 1; j++) {
-                    Color temp = new Color(tempImage.getRGB(i, j));
-                    result.setRGB(i, j, tempImage.getRGB(j, width - 1 - i));
-                    result.setRGB(j, height - i - 1, image.getRGB(width - 1 - i, height - j - 1));
-                    result.setRGB(width - 1 - i, height - j - 1, tempImage.getRGB(width - 1 - j, i));
-                    result.setRGB(width - 1 - j, i, temp.getRGB());
-                }
+            result = rotateImageBy90Degrees(tempImage);
             tempImage = result;
         }
+        return tempImage;
+    }
+
+    private BufferedImage rotateImageBy90Degrees(BufferedImage image) {
+        BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        BufferedImage tempImage = image;
+        for (int i = 0; i < width / 2; i++)
+            for (int j = i; j < height - i - 1; j++) {
+                Color temp = new Color(tempImage.getRGB(i, j));
+                result.setRGB(i, j, tempImage.getRGB(j, width - 1 - i));
+                result.setRGB(j, height - i - 1, image.getRGB(width - 1 - i, height - j - 1));
+                result.setRGB(width - 1 - i, height - j - 1, tempImage.getRGB(width - 1 - j, i));
+                result.setRGB(width - 1 - j, i, temp.getRGB());
+            }
         return result;
     }
 
     public Image apply(ImageOperation imageOperation, String... parameters) {
-        if (imageOperation.equals(ImageOperation.ROTATE)) {
+        if (imageOperation == ImageOperation.ROTATE) {
             int degrees = Integer.parseInt(parameters[0]);
             return new Image(rotateImageBy(degrees));
         } else
