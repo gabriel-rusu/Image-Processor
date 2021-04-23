@@ -9,7 +9,7 @@
 
 </div>
 
-<p align="center"> JavaFX application that lets the user choose a BMP image and then choose the operations that he wants to be applied to the image
+<p align="center"> JavaFX application that lets the user choose a BMP image and then choose the operations that he wants to be applied to the image.
 
 </p>
 
