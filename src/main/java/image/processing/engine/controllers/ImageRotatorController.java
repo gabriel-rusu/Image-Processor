@@ -3,7 +3,7 @@ package image.processing.engine.controllers;
 import java.io.*;
 import java.net.*;
 
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -52,7 +52,7 @@ public class ImageRotatorController implements Initializable {
         group.getToggles().addAll(degreeOption1, degreeOption2, degreeOption3);
         try {
             URI uri = getClass().getClassLoader().getResource("images").toURI();
-            this.imageDirectory = Path.of(uri).toFile();
+            this.imageDirectory = new File(Paths.get(uri).toString());
             this.images = imageDirectory.listFiles(file -> file.isFile());
 
             for (File image : images) {
