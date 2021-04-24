@@ -42,9 +42,10 @@ public class MainController extends Application {
      * @param screen - the screen name that will be displayed
      */
     public static boolean display(AppScreen screen) {
-        if (screen==AppScreen.INFO)
+        // if the wanted screen is the info screen then build it and display it using the other display method
+        if (screen == AppScreen.INFO)
             return display(InfoScreen.build());
-            
+
         try {
             Parent root = FXMLLoader.load(instance.getClass().getResource(screen.getPath()));
             scene = new Scene(root);
@@ -79,12 +80,17 @@ public class MainController extends Application {
         launch(args);
     }
 
+    /**
+     * Method to switch the theme of the app. Currently the only two themes
+     * supported by the app are White and Dark themes
+     */
     public static void switchTheme() {
-        if(currentStyle == Style.LIGHT)
+        if (currentStyle == Style.LIGHT)
             currentStyle = Style.DARK;
         else {
             currentStyle = Style.LIGHT;
         }
+        // removes the old theme & inserters the newly selected theme
         scene.getStylesheets().remove(0);
         scene.getStylesheets().add(currentStyle.getPath());
     }
