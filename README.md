@@ -7,7 +7,7 @@
 
 <div align="center">
 
-  <img src="https://circleci.com/gh/gabriel-rusu/Image-Processor.svg?style=svg&circle-token=c1beb5dcbe85a7243d1924c807440b8280a15206" >
+  <img src="https://circleci.com/gh/gabriel-rusu/Image-Processor.svg?style=svg&circle-token=9b9270357b1e4732a7752034d16ee7a0cdc6129a" >
 
 </div>
 
