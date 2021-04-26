@@ -30,8 +30,10 @@ public class MainController extends Application {
      * @param stage - the primary stage of the app
      */
     private static void initialize(MainController currentApp, Stage stage) {
+        // save the stage & current class reference for app navigation
         MainController.stage = stage;
         MainController.instance = currentApp;
+        // Create the logger that will log all the possible errors
         MainController.logger = Logger.getLogger(MainController.class.getName());
     }
 
@@ -47,36 +49,58 @@ public class MainController extends Application {
             return display(InfoScreen.build());
 
         try {
+            // parse and return the parent of the newly created fxml screen
             Parent root = FXMLLoader.load(instance.getClass().getResource(screen.getPath()));
+            // create a scene that will display the fxml parsed screen
             scene = new Scene(root);
+            // set the default stylesheet to the current screen
             scene.getStylesheets().add(currentStyle.getPath());
+            // put the scene in stage
             stage.setScene(scene);
+            // disable the resizing ability
             stage.setResizable(false);
+            // set the title of the app
             stage.setTitle(APP_NAME);
+            // display the stage in the window
             stage.show();
             return true;
         } catch (Exception exception) {
+            // Log possible errors that can appear when loading a FXML file 
             logger.log(SEVERE, "The app couldn't start correctly", exception);
             return false;
         }
     }
 
+    /**
+     * This method changes the current screen of the app based on the <b>layout</b>
+     * parameter. This method enables the navigation to the manually built screen within the App.
+     * 
+     * @param layout - the layout pane that contains all the components
+     */
     public static boolean display(Parent layout) {
         try {
+            // create a scene that will display the manually built screen
             scene = new Scene(layout);
+            // set the default stylesheet to the current screen
             scene.getStylesheets().add(currentStyle.getPath());
+            // put the scene in stage
             stage.setScene(scene);
+            // disable the resizing ability
             stage.setResizable(false);
+            // set the title of the app
             stage.setTitle(APP_NAME);
+            // display the stage in the window
             stage.show();
             return true;
         } catch (Exception exception) {
+            // Log possible errors that can appear when setting the manually created parent
             logger.log(SEVERE, "The app couldn't start correctly", exception);
             return false;
         }
     }
 
     public static void main(String[] args) {
+        // the application entry point
         launch(args);
     }
 
