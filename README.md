@@ -7,6 +7,8 @@
 
 <div align="center">
 
+  <img src="https://circleci.com/gh/gabriel-rusu/Image-Processor.svg?style=svg&circle-token=9b9270357b1e4732a7752034d16ee7a0cdc6129a" >
+
 </div>
 
 <p align="center"> JavaFX application that lets the user choose a BMP image and then choose the operations that he wants to be applied to the image.
