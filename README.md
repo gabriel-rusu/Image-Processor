@@ -37,7 +37,7 @@ These instructions will get you a copy of the project up and running on your loc
 The following are the necessary tools needed to run/extend the current project:
 
 * [Maven](https://maven.apache.org/download.cgi) - build tool for Java
-* [Java JDK 8+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
+* [Java JDK 11+](https://www.oracle.com/ro/java/technologies/javase-downloads.html) - java development kit
 
 ### Installing
 
