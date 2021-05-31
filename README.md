@@ -26,7 +26,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Image Processor is a program focused on efficient image processing capabilities, implemented in a modular way using domain-driven design. The application comes with a set of BMP images that can be inspected and modified directly from the graphical interface.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
